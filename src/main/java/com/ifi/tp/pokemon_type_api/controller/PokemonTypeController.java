@@ -14,8 +14,12 @@ public class PokemonTypeController {
     }
 
     @GetMapping("/{id}")
-    public PokemonType getPokemonTypeFromId(@MatrixVariable int id) {
+    public PokemonType getPokemonTypeFromId(@PathVariable int id) {
         return pokeService.getPokemonType(id);
+    }
+    @GetMapping(value = "/",params = "name")
+    public PokemonType getPokemonTypeFromName(@RequestParam String name){
+        return pokeService.getPokemonTypeByName(name);
     }
     @GetMapping("/")
     public List<PokemonType> getAllPokemonTypes() {
