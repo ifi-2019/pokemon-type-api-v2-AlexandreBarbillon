@@ -24,6 +24,11 @@ public class PokemonTypeServiceImpl implements PokemonTypeService {
     }
 
     @Override
+    public List<PokemonType> getPokemonTypeByTypes(List<String> types) {
+        return this.pokeRepo.findPokemonTypeByTypes(types);
+    }
+
+    @Override
     public List<PokemonType> getAllPokemonTypes() {
         return this.pokeRepo.findAllPokemonType();
     }
