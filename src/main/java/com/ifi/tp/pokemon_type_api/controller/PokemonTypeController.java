@@ -31,7 +31,7 @@ public class PokemonTypeController {
         var typeList = Arrays.asList(types.split(","));
         return pokeService.getPokemonTypeByTypes(typeList);
     }
-
+    @GetMapping(value = "/")
     public List<PokemonType> getAllPokemonTypes() {
         return pokeService.getAllPokemonTypes();
     }
